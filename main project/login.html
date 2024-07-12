@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSING MITRA</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://kit.fontawesome.com/2edfbc5391.js"crossorigin="anonymous"></script>
+    <style>
+         .side-buttons {
+        display: flex; /* Use flexbox for aligning buttons horizontally */
+        justify-content: flex-end; /* Align buttons to the right side */
+        margin-top: 20px; /* Add some margin from the top */
+    }
+    .form-container {
+            width: 270px; /* Adjust the width as needed */
+            padding: 25px; /* Add padding to the form container */
+            background-color: #f2f2f2; /* Add a background color */
+            border-radius: 10px; /* Add border radius for rounded corners */
+        }
+    </style>
+   <script>
+        // Function to validate the password
+        function validatePassword(event) {
+            // Get the password input
+            const passwordInput = event.target.querySelector('input[name="password"]');
+            const password = passwordInput.value;
+
+            // Define a regular expression for password validation
+            const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/;
+
+            // Check if password matches the criteria
+            if (!passwordRegex.test(password)) {
+                // Prevent form submission and show an alert
+                event.preventDefault();
+                alert("Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
+            }
+        }
+
+        // Function to validate the username
+        function validateUsername(event) {
+            // Get the username input
+            const usernameInput = event.target.querySelector('input[name="username"]');
+            const username = usernameInput.value;
+
+            // Define a regular expression to allow only alphabetic characters
+            const usernameRegex = /^[A-Za-z]+$/;
+
+            // Check if the username matches the regex
+            if (!usernameRegex.test(username)) {
+                // Prevent form submission and show an alert
+                event.preventDefault();
+                alert("Username must contain only alphabetic characters. Numbers and special characters are not allowed.");
+            }
+        }
+    </script>
+    
+</head>
+<body>
+   <div class="page">
+       <div class="navbar">
+           <img src="C:\Users\Yash\OneDrive\Desktop\main\main project\Images\TECH INFINITY.jpg" class="logo">
+           <h1><span style="font-family: 'ARIAL BLACK', cursive;
+            color:rgb(71, 2, 48);"> HOUSING MITRA हाऊसिंग मित्र </span></h1>
+           <nav>
+               <ul>
+                   <li><a href=""class="active">Home</a></li>
+                   <li><a href="#rules">Rules</a></li>
+                   <li><a href="links.html">Links</a></li>
+                </ul>
+            </nav>
+            <a href="Adminlogin.php" class="btn">Admin Login</a>
+       </div>
+       <div class="row">
+        <div class="col-1">
+             <img src="Images/building1.jpg" >
+        </div>
+        <div class="col-2">
+           <div class="form-container">
+               <div class="form-btn">
+                   <span onclick="login()">Login</span>
+                   <span onclick="register()">Register</span>
+                   <hr id="indicator">
+                </div>
+                <form action="login.php" method="POST" id="Loginform" onsubmit="validatePassword(event); validateUsername(event)">
+                    <input type="text" placeholder="Username नाव" name="username" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                    <input type="email" placeholder="E-mail ई-मेल" name="email" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                    <input type="number" placeholder="Flat-No. फ्लॅट क्रमांक" name="flatno" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;"min="1" max="25">
+                    <input type="password" placeholder="Password पासवर्ड" name="password" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                    <button type="submit" class="btn-losi">Login लॉग ईन</button><br>
+                    <a href="#">Forget Password...??? पासवर्ड विसरला ?</a>
+                </form>
+            
+                <form action="register.php" method="POST" id="Regform" onsubmit="validatePassword(event); validateUsername(event)">
+                    <input type="text" placeholder="Username नाव" name="username" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                    <input type="email" placeholder="E-mail ई-मेल" name="email" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;"minlength="10" maxlength="50">
+                    <input type="number" placeholder="Flat-No. फ्लॅट क्रमांक" name="flatno" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;" min="1" max="25">
+                    <input type="tel" placeholder="Mobile Number" name="mobno" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;" pattern="[0-9]{10}">
+                    <input type="number" placeholder="Number of Family members कुटुंबातील सदस्य" name="fammem" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;"min="1" max="20">
+                    <input type="password" placeholder="Password पासवर्ड" name="password" required style="width: 200px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                    <button type="submit" class="btn-losi">Register Now नोंदणी करा</button >
+                </form>
+       
+    </div>
+                  
+                </form>
+
+           </div>
+             
+        </div>
+    </div>
+   </div>
+   <hr>
+   <div id="rules">
+       <h1>Rules and Regulations</h1>
+       <hr>
+       
+        <li>Members and residents are required to keep their flats/homes and nearby premises clean and habitable.</li>  
+        <li>The residents should also maintain proper cleanliness etiquette while using common areas, parking lot, etc. and not throw litter from their balconies and windows.</li>
+        <li>Members must regularly pay the maintenance charges and all other dues necessitated by the society.</li>
+        <li>Keeping pets is allowed after submitting the required NOC to the society. But if pets like dogs are creating any kind of disturbance to other HOUSING MITRAmembers then the pets won’t be allowed.</li>
+        <li>Every member of the HOUSING MITRAshould park their vehicles in their respective allotted parking spaces only.</li> 
+        <li> After using the community hall for any event or function it should be cleaned and no damages should be caused.</li> 
+        <li>No member can occupy the area near their front doors, corridors, passage for their personal usage.</li> 
+        <li>Salesmen, vendors or any other sellers are not allowed to enter the premises.</li>
+        <li>Wastage and over usage of water is not allowed.</li>
+        <li>Smoking in lobbies, passage is not allowed. If any irresponsible person is found smoking in the no smoking zone, he/she shall be charged with penalty.</li>   
+
+    </div>   
+    <h1 style="color: red;text-align: center;">नियम </h1>
+    <hr>
+    <B>
+    <li>सदस्य आणि रहिवाशांनी त्यांचे फ्लॅट/घरे आणि जवळपासचा परिसर स्वच्छ आणि राहण्यायोग्य ठेवणे आवश्यक आहे.</li>
+         <li>रहिवाशांनी देखील सामान्य जागा, वाहनतळ इत्यादींचा वापर करताना योग्य स्वच्छता शिष्टाचार पाळले पाहिजेत आणि त्यांच्या बाल्कनीतून आणि खिडक्यांमधून कचरा टाकू नये.</li>
+         <li>सदस्यांनी नियमितपणे देखभाल शुल्क आणि सोसायटीला आवश्यक असलेले इतर सर्व देय देणे आवश्यक आहे.</li>
+         <li>सोसायटीला आवश्यक एनओसी सबमिट केल्यानंतर पाळीव प्राणी पाळण्याची परवानगी आहे. परंतु कुत्र्यांसारखे पाळीव प्राणी इतर सदस्यांना कोणत्याही प्रकारचा त्रास देत असल्यास पाळीव प्राण्यांना परवानगी दिली जाणार नाही.</li>
+         <li>हाउसिंग मित्राच्या प्रत्येक सदस्याने त्यांची वाहने त्यांच्या संबंधित पार्किंगच्या जागेतच पार्क केली पाहिजेत.</li>
+         <li>कोणत्याही कार्यक्रमासाठी किंवा कार्यक्रमासाठी कम्युनिटी हॉल वापरल्यानंतर ते स्वच्छ केले पाहिजे आणि कोणतेही नुकसान होऊ नये.</li>
+         <li>कोणताही सदस्य त्यांच्या वैयक्तिक वापरासाठी त्यांच्या पुढील दरवाजा, कॉरिडॉर, पॅसेज जवळील जागा व्यापू शकत नाही.</li>
+         <li>विक्रेते, विक्रेते किंवा इतर कोणत्याही विक्रेत्याला परिसरात प्रवेश करण्याची परवानगी नाही.</li>
+         <li>पाण्याचा अपव्यय आणि अतिवापर करण्यास परवानगी नाही.</li>
+         <li>लॉबीमध्ये धुम्रपान, पॅसेजला परवानगी नाही. नो स्मोकिंग झोनमध्ये कोणतीही बेजबाबदार व्यक्ती धूम्रपान करताना आढळल्यास, त्याच्यावर दंड आकारला जाईल.</li>
+        </B> 
+ </div>   
+    <!-- footer code -->
+    <hr>
+   <script>
+       var Loginform=document.getElementById("Loginform")
+       var Regform=document.getElementById("Regform")
+       var indicator=document.getElementById("indicator")
+
+         function register(){
+            Regform.style.transform= "translateX(0px)";
+            Loginform.style.transform= "translateX(0px)";
+            indicator.style.transform= "translateX(80px)";
+
+         }
+         function login(){
+            Regform.style.transform= "translateX(300px)";
+            Loginform.style.transform= "translateX(300px)";
+            indicator.style.transform= "translateX(0px)";
+
+         }
+         
+   </script>
+</body>
+</html>   
