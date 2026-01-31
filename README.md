@@ -7,16 +7,9 @@ Description: This project has been developed to fulfill day to day administrativ
 説明：本プロジェクトは、協同住宅組合（コーポレーティブ・ハウジング・ソサエティ）の日常的な管理業務および法的ニーズを満たすことを目的として開発されました。記録管理や法的事項を維持・管理するための、ユーザーフレンドリーなプラットフォームを提供します。
 ________________________________________________________________________________________________________________________________________________________________________________________________
 
-Hardware Specifications
-* Intel I3 or AMD Ryzen 3 or any configuration greater
-* Input Devices - Standard keyboard and mouse
-* Output Devices - Any monitor with clean and clear display
-* RAM - 4GB or greater
-* SSD 256GB or greater
 
 Software Specifications:
 * Any LINUX or Windows distribution
-* Any web server with 2GB space
 * Frontend - HTML,Bootstrap, CSS
 * Backend - PHP
 * Database - My SQL
