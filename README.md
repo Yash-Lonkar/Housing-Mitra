@@ -23,7 +23,7 @@ This project has been developed to fulfill the **day-to-day administrative and l
 
 * **Operating System:** Any Linux distribution or Windows
 * **Frontend:** HTML, Bootstrap, CSS
-* **Backend:** PHP
+* **Backend:** PHP, JavaScript
 * **Database:** MySQL
 * **Web Browser:** Any modern web browser with good processing speed and high security
 
